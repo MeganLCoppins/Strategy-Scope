@@ -1,10 +1,12 @@
 import React from "react";
-import DragNDrop from "../../components/DragNDrop/index";
+// import DragNDrop from "../../components/DragNDrop/index";
+import Profile from "../Profile/Profile";
 
 function Home() {
   return (
     <div>
-      <DragNDrop />
+      {/* <DragNDrop /> */}
+    <Profile />
     </div>
         )
       }

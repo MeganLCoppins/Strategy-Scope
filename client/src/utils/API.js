@@ -1,8 +1,12 @@
 import axios from "axios";
 
 export default {
-  getProjects: function () {
-    return axios.get("/api/projects");
+  getProjects: function (token) {
+    return axios.get("/api/projects",{
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+    });
   },
   getProject: function (id) {
     return axios.get("/api/projects/" + id);
@@ -10,10 +14,13 @@ export default {
   deleteProject: function (id) {
     return axios.delete("/api/projects/" + id);
   },
-  createProject: function (projectData) {
-    return axios.post("/api/projects/", projectData);
+  createProject: function (projectData, token) {
+    return axios.post("/api/projects/", projectData, {
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    });
   },
-
   getTasks: function (token) {
     return axios.get("/api/tasks", {
       headers: {

@@ -1,16 +1,20 @@
 const router = require("express").Router();
-const projectsController = require("../../controllers/projectsController");
+const projectController = require("../../controllers/projectController");
+const authRoute = require("../../utils/authO");
 
+// matches with /api/projects
+router.route("/").get(authRoute, projectController.findAll);
+
+// matches with /api/projects/add
 router
   .route("/")
-  .get(projectsController.findAll)
-  .post(projectsController.create);
+  .post(authRoute, projectController.create);
 
 // Matches with "/api/projects/:id"
 router
   .route("/:id")
-  .get(projectsController.findById)
-  .put(projectsController.update)
-  .delete(projectsController.remove);
+  .get(authRoute, projectController.findById)
+  .put(projectController.update)
+  // .delete(authRoute, taskController.remove);
 
 module.exports = router;
