@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div>
+      <div id="navDisplay">
         <ul className="navbar-nav">
           <li id="signInOut" className="nav-item">
             {!isAuthenticated && !loading ? (

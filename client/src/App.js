@@ -3,7 +3,6 @@ import { Router, Route, Switch } from "react-router-dom";
 import history from "./utils/history";
 import { useAuth0 } from "./utils/auth0Provider";
 import PrivateRoute from "../src/components/PrivateRoute";
-
 import "./App.css";
 
 // Common

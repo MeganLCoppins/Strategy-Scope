@@ -1,5 +1,4 @@
 import "./style.css";
-// const db = require("../../models/task");
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import { useAuth0 } from "../../utils/auth0Provider";

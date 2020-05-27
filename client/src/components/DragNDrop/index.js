@@ -130,9 +130,9 @@ function DragNDrop() {
   // console.log("Columns", columns);
 
   return (
-    <div>
-
-    <div style={{ display: "flex", justifyContent: "center", height: "100%", marginRight: "10%", marginTop: "3%", }}>
+    <div id="kanban">
+    <DueDate />
+    <div id="dragNDrop" style={{ display: "flex", justifyContent: "center", height: "100%", marginLeft: "5%", marginRight: "5%", padding: "5%"}}>
       <DragDropContext
         onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
       >
@@ -144,6 +144,7 @@ function DragNDrop() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+                marginRight: "3%"
               }}
             >
               <h2>{column.name}</h2>
@@ -156,10 +157,10 @@ function DragNDrop() {
                         ref={provided.innerRef}
                         style={{
                           background: snapshot.isDraggingOver
-                            ? "lightblue"
-                            : "lightgrey",
-                          padding: 4,
-                          width: 250,
+                            ? "skyblue"
+                            : "none",
+                          padding: 10,
+                          width: 350,
                           minHeight: 500,
                         }}
                       >
@@ -183,8 +184,8 @@ function DragNDrop() {
                                       margin: "0 0 8px 0",
                                       minHeight: "50px",
                                       backgroundColor: snapshot.isDragging
-                                        ? "black"
-                                        : "blue",
+                                        ? "steelblue"
+                                        : "midnightblue",
                                       color: "white",
                                       ...provided.draggableProps.style,
                                     }}
@@ -209,8 +210,9 @@ function DragNDrop() {
           );
         })}
       </DragDropContext>
+
     </div>
-    <DueDate />
+
   </div>
   );
 }

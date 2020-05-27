@@ -3,6 +3,10 @@ nav.navbar.navbar-default {
   font-family: "Roboto", sans-serif;
 }
 
+.navbar-nav {
+  flex-direction: row;
+}
+
 #signOut {
   font-family: "Roboto", sans-serif;
 
@@ -278,5 +282,11 @@ nav {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+@media screen and (max-width: 700px){
+  #navDisplay {
+    width: 100%;
   }
 }
