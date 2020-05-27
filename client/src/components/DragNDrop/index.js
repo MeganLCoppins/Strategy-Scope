@@ -152,7 +152,7 @@ function DragNDrop() {
                 <Droppable droppableId={id} key={id}>
                   {(provided, snapshot) => {
                     return (
-                      <div
+                      <div id="columns"
                         {...provided.droppablePorps}
                         ref={provided.innerRef}
                         style={{

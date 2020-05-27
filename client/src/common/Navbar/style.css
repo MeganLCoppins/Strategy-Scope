@@ -2,7 +2,9 @@ nav.navbar.navbar-default {
   margin-bottom: 2vw;
   font-family: "Roboto", sans-serif;
 }
-
+#navDisplay {
+  width: 30%;
+}
 .navbar-nav {
   flex-direction: row;
 }
