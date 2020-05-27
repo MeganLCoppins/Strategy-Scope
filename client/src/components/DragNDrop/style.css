@@ -21,5 +21,6 @@ background-image: linear-gradient(45deg, #21D4FD 12%, #B721FF 88%);
     }
     #columns {
         min-height: 0!important;
+        width: auto!important;
     }
 }

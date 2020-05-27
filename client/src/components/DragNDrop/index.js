@@ -141,7 +141,6 @@ function DragNDrop() {
             <div
               style={{
                 key: "index",
-                display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 marginRight: "3%"

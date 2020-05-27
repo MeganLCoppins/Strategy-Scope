@@ -89,7 +89,7 @@ nav.navbar.navbar-default {
   }
 }
 
-#chatButt {
+.chatButt {
   font-family: "Roboto", sans-serif;
   margin-left:calc(1vh + 0vh);
   font-size: calc(1.1vh + 0.5vmin);
@@ -105,7 +105,7 @@ nav.navbar.navbar-default {
   border-radius: 10px;
 }
 
-#chatButt:before {
+.chatButt:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -133,19 +133,19 @@ nav.navbar.navbar-default {
   border-radius: 10px;
 }
 
-#chatButt:active {
+.chatButt:active {
   color: #000;
 }
 
-#chatButt:active:after {
+.chatButt:active:after {
   background: transparent;
 }
 
-#chatButt:hover:before {
+.chatButt:hover:before {
   opacity: 1;
 }
 
-#chatButt:after {
+.chatButt:after {
   z-index: -1;
   content: "";
   position: absolute;
