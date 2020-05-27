@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -35,8 +36,10 @@ function Profile() {
     if (projects.length !== 0) {
       return projects.map((project) => (
         <li>
-          <div>
+          <div key={project._id}>
+            <Link to={"projects/" + project.id}>
             <h4>{project.title}</h4>
+            </Link>
           </div>
         </li>
       ));
@@ -60,14 +63,16 @@ async function handleFormSubmit(e){
         API.createProject( {
             title: formObject.title
         }, token).then(function(){
-          loadProjects();
+          goToProject();
           //reset the state for the forms after data is passed
           setFormObject({"title":""});
         })
         .catch(err => console.log(err));
     }
 }
+  function goToProject() {
 
+  }
   return (
     <Fragment>
       <div className="profile">
