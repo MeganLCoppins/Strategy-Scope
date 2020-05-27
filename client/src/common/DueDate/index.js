@@ -29,7 +29,7 @@ function DueDate() {
   const renderInfo = () => {
     if (tasks.length !== 0) {
       return tasks.map((tasks) => (
-        <li id="sideLi">
+        <li>
           <div>
             <h4>{tasks.title}</h4>
           </div>{" "}
@@ -43,34 +43,11 @@ function DueDate() {
   };
 
   return (
-    <div className="sidenav">
+      <div id="duedate">
       <ul>
         {renderInfo()}
-        <li></li>
       </ul>
     </div>
   );
 }
 export default DueDate;
-
-// function DueDate() {
-
-//     return (
-
-//        <div className="sidenav">
-//  <ul>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-//  <li id='sideLi'><p>Shyaboi</p><p>10/24/3030</p></li>
-
-// </ul>
-
-// </div>
-
-//     );
-// }

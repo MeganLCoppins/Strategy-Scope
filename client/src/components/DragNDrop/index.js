@@ -131,7 +131,7 @@ function DragNDrop() {
 
   return (
     <div>
-    <DueDate />
+
     <div style={{ display: "flex", justifyContent: "center", height: "100%", marginRight: "10%", marginTop: "3%", }}>
       <DragDropContext
         onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
@@ -210,6 +210,7 @@ function DragNDrop() {
         })}
       </DragDropContext>
     </div>
+    <DueDate />
   </div>
   );
 }
