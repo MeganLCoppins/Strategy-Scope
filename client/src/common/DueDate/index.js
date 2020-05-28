@@ -37,7 +37,7 @@ function DueDate() {
         </li>
       ));
     } else {
-      return <h1>Loading...</h1>;
+      return <h1>No Tasks to Display...</h1>;
     }
   };
 

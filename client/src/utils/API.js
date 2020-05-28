@@ -11,6 +11,17 @@ export default {
   getProject: function (id) {
     return axios.get("/api/projects/" + id);
   },
+  updateProject: function (id, newTask, token) {
+    return axios.put(
+      "/api/projects/" + id,
+      { newTask },
+      {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  },
   deleteProject: function (id) {
     return axios.delete("/api/projects/" + id);
   },

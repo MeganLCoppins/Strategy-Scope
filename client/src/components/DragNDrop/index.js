@@ -22,7 +22,6 @@ function DragNDrop() {
   const { getTokenSilently } = useAuth0();
   const [tasks, setTasks] = useState([]);
   // const [formObject, setFormObject] = useState({})
-
   useEffect(() => {
     loadTasks();
   }, []);
@@ -146,7 +145,7 @@ function DragNDrop() {
                 marginRight: "3%"
               }}
             >
-              <h2>{column.name}</h2>
+              <h2 style={{textAlign: "center"}}>{column.name}</h2>
               <div style={{ margin: 8 }}>
                 <Droppable droppableId={id} key={id}>
                   {(provided, snapshot) => {
