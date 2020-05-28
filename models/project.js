@@ -3,12 +3,28 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ProjectSchema = new Schema({
-  title: String,
+  title: {
+    type: String,
+    unique: true
+  },
   description: String,
   tasks: [
     {
-        type: Schema.Types.ObjectId,
-        ref: "Task"
+        title: {
+          type: String,
+          unique: true
+        },
+        description: {
+          type: String
+        },
+        due_date: {
+          type: Date,
+          default: Date.now,
+        },
+        status: {
+          type: String,
+          default: "to-do",
+        },
     }
 ]
 });

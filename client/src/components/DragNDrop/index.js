@@ -6,6 +6,7 @@
 // Draggable are items to drag
 
 import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import API from "../../utils/API";
 import { useAuth0 } from "../../utils/auth0Provider";
@@ -21,6 +22,7 @@ function DragNDrop() {
   //// ajax call to retrieve data from seed (Task)
   const { getTokenSilently } = useAuth0();
   const [tasks, setTasks] = useState([]);
+  const {id} = useParams();
   // const [formObject, setFormObject] = useState({})
   useEffect(() => {
     loadTasks();
@@ -130,6 +132,7 @@ function DragNDrop() {
 
   return (
     <div id="kanban">
+      <Link to={"/tasks/projects/" + id }><button className="chatButt">Add Task</button></Link>
     <DueDate />
     <div id="dragNDrop" style={{ display: "flex", justifyContent: "center", height: "100%", marginLeft: "5%", marginRight: "5%", padding: "5%"}}>
       <DragDropContext

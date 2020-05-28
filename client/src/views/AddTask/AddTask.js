@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import API from "../../utils/API";
 import { useAuth0 } from "../../utils/auth0Provider";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Input, TextArea, FormBtn } from "../../components/Form/index";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -11,9 +11,9 @@ function AddTask() {
   const { getTokenSilently } = useAuth0();
 
 //   components initial state
-  const [formObject, setFormObject] = useState({})
-  const [formDate, setDate] = useState(new Date())
-
+  const [formObject, setFormObject] = useState({});
+  const [formDate, setDate] = useState(new Date());
+  const {id} = useParams();
 
 //   update component state when user types in input field
     function handleInputChange(e){
@@ -32,7 +32,7 @@ function AddTask() {
         e.preventDefault();
         if(formObject.title && formObject.description && formDate) {
           const token = await getTokenSilently();
-            API.createTask( {
+            API.updateProject( id, {
                 title: formObject.title,
                 description: formObject.description,
                 due_date: formDate

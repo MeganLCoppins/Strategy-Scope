@@ -34,7 +34,7 @@ function App() {
       <Navbar />
       <Switch>
         <PrivateRoute exact path="/" component={Home} />
-        <PrivateRoute exact path="/tasks/add" component={AddTask} />
+        <PrivateRoute exact path="/tasks/projects/:id" component={AddTask} />
         <PrivateRoute path="/profile" component={Profile}/>
         <PrivateRoute path="/projects/:id" component={Project}/>
       </Switch>

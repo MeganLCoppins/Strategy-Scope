@@ -37,7 +37,7 @@ function Profile() {
       return projects.map((project) => (
         <li>
           <div key={project._id}>
-            <Link to={"projects/" + project.id}>
+            <Link to={"/projects/" + project._id}>
             <h4>{project.title}</h4>
             </Link>
           </div>

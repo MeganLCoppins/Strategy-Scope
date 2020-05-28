@@ -12,9 +12,9 @@ export default {
     return axios.get("/api/projects/" + id);
   },
   updateProject: function (id, newTask, token) {
+    console.log( newTask );
     return axios.put(
-      "/api/projects/" + id,
-      { newTask },
+      "/api/projects/" + id, newTask,
       {
         headers: {
           authorization: `Bearer ${token}`,
