@@ -1,6 +1,7 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
+import { useParams } from "react-router-dom";
 import { useAuth0 } from "../../utils/auth0Provider";
 const { v4: uuidv4 } = require("uuid");
 uuidv4();
@@ -11,29 +12,43 @@ uuidv4();
 function DueDate() {
   const { getTokenSilently } = useAuth0();
   const [tasks, setTasks] = useState([]);
+  const [project, setProject] = useState([]);
+  const {id} = useParams();
   // const [formObject, setFormObject] = useState({})
   useEffect(() => {
     loadTasks();
   }, []);
 
+ let newTask = [];
   async function loadTasks() {
     const token = await getTokenSilently();
-    API.getTasks(token)
-      .then((res) => {
-        setTasks(res.data);
-      })
-
+    console.log(id);
+    API.getProjects( token)
+      .then(res => {
+        setTasks(
+          tasks.task = res.data.filter((data) => data._id === id)
+        )
+        setProject(
+          project.projects = tasks.task[0].tasks
+        )
+      let newProg = res.data.filter((data) => data._id === id);
+      // newTask = newProg[0].tasks
+      // setTasks(newProg[0].tasks);
+      console.log(project.projects);
+      console.log(tasks.task[0].tasks);
+    })
       .catch((err) => console.log(err));
-  }
+}
+
   const renderInfo = () => {
-    if (tasks.length !== 0) {
-      return tasks.map((tasks) => (
-        <li>
+    if (project.length !== 0) {
+      return project.map((task) => (
+        <li key={task.title}>
           <div>
-            <h4>{tasks.title}</h4>
+            <h4>{task.title}</h4>
           </div>{" "}
-          <div>Deadline Date: </div>
-          <div>{tasks.due_date.slice(2, 10)}</div>
+          <div>Due Date: </div>
+          <div>{task.due_date.slice(2, 10)}</div>
         </li>
       ));
     } else {
@@ -43,10 +58,11 @@ function DueDate() {
 
   return (
       <div id="duedate">
-      <ul>
+        <ul>
+
         {renderInfo()}
-      </ul>
-    </div>
+        </ul>
+      </div>
   );
 }
 export default DueDate;

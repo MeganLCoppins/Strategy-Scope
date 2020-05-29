@@ -14,7 +14,7 @@ router
 router
   .route("/:id")
   .get(authRoute, projectController.findById)
-  .put(projectController.update)
+  .put(authRoute, projectController.update)
   // .delete(authRoute, taskController.remove);
 
 module.exports = router;

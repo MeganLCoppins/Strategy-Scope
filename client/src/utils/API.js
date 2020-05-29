@@ -8,8 +8,12 @@ export default {
     },
     });
   },
-  getProject: function (id) {
-    return axios.get("/api/projects/" + id);
+  getProject: function (id, token) {
+    return axios.get("/api/projects/" + id, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
   },
   updateProject: function (id, newTask, token) {
     console.log( newTask );
