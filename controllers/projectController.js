@@ -24,7 +24,7 @@ module.exports = {
     },
     update: function(req, res){
         db.Project
-            .findByIdAndUpdate(req.params.id, { tasks: req.body }, { new: true })
+            .findByIdAndUpdate(req.params.id, { tasks: req.body })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }

@@ -30,7 +30,7 @@ export default {
     return axios.delete("/api/projects/" + id);
   },
   createProject: function (projectData, token) {
-    return axios.post("/api/projects/", projectData, {
+    return axios.post("/api/projects", projectData, {
       headers: {
         authorization: `Bearer ${token}`
       }
@@ -57,7 +57,7 @@ export default {
   },
 
   createTask: function (taskData, token) {
-    return axios.post("/api/tasks/add", taskData, {
+    return axios.post("/api/tasks", taskData, {
       headers: { 
         authorization: `Bearer ${token}`
       }

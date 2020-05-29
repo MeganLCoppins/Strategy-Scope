@@ -10,7 +10,7 @@ const Splash = () => {
       <div id="main">
         <button
           onClick={() => loginWithPopup()}
-          class="glow-on-hover"
+          className="glow-on-hover"
           type="button"
         >
           <img id="logo" src={logo} alt="logo" />

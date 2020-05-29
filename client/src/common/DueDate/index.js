@@ -14,53 +14,48 @@ function DueDate() {
   const [tasks, setTasks] = useState([]);
   const [project, setProject] = useState([]);
   const {id} = useParams();
-  // const [formObject, setFormObject] = useState({})
-  useEffect(() => {
-    loadTasks();
-  }, []);
+ 
+  // useEffect(() => {
+  //   loadTasks();
+  // }, []);
 
- let newTask = [];
-  async function loadTasks() {
-    const token = await getTokenSilently();
-    console.log(id);
-    API.getProjects( token)
-      .then(res => {
-        setTasks(
-          tasks.task = res.data.filter((data) => data._id === id)
-        )
-        setProject(
-          project.projects = tasks.task[0].tasks
-        )
-      let newProg = res.data.filter((data) => data._id === id);
-      // newTask = newProg[0].tasks
-      // setTasks(newProg[0].tasks);
-      console.log(project.projects);
-      console.log(tasks.task[0].tasks);
-    })
-      .catch((err) => console.log(err));
-}
+//  let newTask = [];
+//   async function loadTasks() {
+//     const token = await getTokenSilently();
+//     console.log(id);
+//     API.get( token)
+//       .then(res => {
+//         setTasks(
+//           tasks.task = res.data.filter((data) => data._id === id)
+//         )
+//         setProject(
+//           project.projects = tasks.task[0].tasks
+//         )
+//     })
+//       .catch((err) => console.log(err));
+// }
 
-  const renderInfo = () => {
-    if (project.length !== 0) {
-      return project.map((task) => (
-        <li key={task.title}>
-          <div>
-            <h4>{task.title}</h4>
-          </div>{" "}
-          <div>Due Date: </div>
-          <div>{task.due_date.slice(2, 10)}</div>
-        </li>
-      ));
-    } else {
-      return <h1>No Tasks to Display...</h1>;
-    }
-  };
+  // const renderInfo = () => {
+  //   if (project.length !== 0) {
+  //     return project.map((task) => (
+  //       <li key={task.title}>
+  //         <div>
+  //           <h4>{task.title}</h4>
+  //         </div>{" "}
+  //         <div>Due Date: </div>
+  //         <div>{task.due_date.slice(2, 10)}</div>
+  //       </li>
+  //     ));
+  //   } else {
+  //     return <h1>No Tasks to Display...</h1>;
+  //   }
+  // };
 
   return (
       <div id="duedate">
         <ul>
 
-        {renderInfo()}
+        {/* {renderInfo()} */}
         </ul>
       </div>
   );

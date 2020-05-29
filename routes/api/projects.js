@@ -3,12 +3,15 @@ const projectController = require("../../controllers/projectController");
 const authRoute = require("../../utils/authO");
 
 // matches with /api/projects
-router.route("/").get(authRoute, projectController.findAll);
+router
+.route("/")
+.get(authRoute, projectController.findAll)
+.post(authRoute, projectController.create)
 
 // matches with /api/projects/add
-router
-  .route("/")
-  .post(authRoute, projectController.create);
+// router
+//   .route("/")
+//   .post(authRoute, projectController.create);
 
 // Matches with "/api/projects/:id"
 router

@@ -20,8 +20,6 @@ function Profile() {
   if (loading || !user) {
     return <div>Loading...</div>;
   }
-  // const { getTokenSilently } = useAuth0();
-
 
   async function loadProjects() {
     const token = await getTokenSilently();
@@ -29,14 +27,14 @@ function Profile() {
       .then((res) => {
         setProjects(res.data);
       })
-
       .catch((err) => console.log(err));
   }
+
   const renderInfo = () => {
     if (projects.length !== 0) {
       return projects.map((project) => (
-        <li>
-          <div key={project._id}>
+        <li key={project._id}>
+          <div>
             <Link to={"/projects/" + project._id}>
             <h4>{project.title}</h4>
             </Link>
@@ -55,21 +53,19 @@ function Profile() {
     setFormObject({...formObject, [name]: value})
 };
 
-// when form is submitted use API.createTask method to save task data
+// when form is submitted use API.createProject method to save task data
 async function handleFormSubmit(e){
     e.preventDefault();
-    if(formObject.title) {
+    if (formObject.title) {
       const token = await getTokenSilently();
         API.createProject( {
-            title: formObject.title
-        }, token).then(function(){
-          goToProject();
-          //reset the state for the forms after data is passed
-          setFormObject({"title":""});
-        })
+          title: formObject.title
+        }
+        , token)
+        .then( res => goToProject())
         .catch(err => console.log(err));
+      }
     }
-}
   function goToProject() {
 
   }
@@ -84,7 +80,8 @@ async function handleFormSubmit(e){
             <Form >
               <Form.Group as={Row} controlId="createProject">
                 <Col sm={10}>
-                  <Form.Control name="title" 
+                  <Form.Control 
+                  name="title" 
                   value={formObject.title}
                   placeholder="Enter The Project Name" 
                   onChange={handleInputChange}/>

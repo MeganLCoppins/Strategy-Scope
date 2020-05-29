@@ -26,24 +26,41 @@ function AddTask() {
     function handleDateChange(formDate){
       setDate(formDate);
     }
-
-// when form is submitted use API.createTask method to save task data
+    // when form is submitted use API.createTask method to save task data
     async function handleFormSubmit(e){
-        e.preventDefault();
-        if(formObject.title && formObject.description && formDate) {
-          const token = await getTokenSilently();
-            API.updateProject( id, {
-                title: formObject.title,
-                description: formObject.description,
-                due_date: formDate
-            }, token).then(function(){
-              alert('Task Submitted!');
-              //reset the state for the forms after data is passed
-              setFormObject({"title":"","description":""});
-            })
-            .catch(err => console.log(err));
-        }
-    }
+      e.preventDefault();
+      if(formObject.title && formObject.description && formDate) {
+        const token = await getTokenSilently();
+          API.createTask(
+            {
+              title: formObject.title,
+              description: formObject.description,
+              due_date: formDate
+            }, token).then(res => {
+            alert('Task Submitted!');
+            //reset the state for the forms after data is passed
+            setFormObject({"title":"","description":""});
+          })
+          .catch(err => console.log(err));
+      }
+  }
+// when form is submitted use API.createTask method to save task data
+    // async function handleFormSubmit(e){
+    //     e.preventDefault();
+    //     if(formObject.title && formObject.description && formDate) {
+    //       const token = await getTokenSilently();
+    //         API.updateProject( id, {
+    //             title: formObject.title,
+    //             description: formObject.description,
+    //             due_date: formDate
+    //         }, token).then(function(){
+    //           alert('Task Submitted!');
+    //           //reset the state for the forms after data is passed
+    //           setFormObject({"title":"","description":""});
+    //         })
+    //         .catch(err => console.log(err));
+    //     }
+    // }
 
   return (
     <div className="container mt-4">

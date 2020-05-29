@@ -12,9 +12,6 @@ const TaskSchema = new Schema({
   status: {
     type: String,
     default: "to-do",
-  },
-  project: {
-    type: Number
   }
 });
 

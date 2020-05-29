@@ -21,6 +21,7 @@ module.exports = {
     create: function(req, res){
         db.Task
             .create(req.body)
+            .then(({ _id }) => db.Project.findOneAndUpdate({}, { $push: { tasks: _id } }, { new: true }))
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
