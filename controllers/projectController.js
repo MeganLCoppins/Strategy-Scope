@@ -12,7 +12,8 @@ module.exports = {
     },
     findById: function(req, res){
         db.Project
-            .find(req.params.id)
+            .find({})
+            .populate("tasks")
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },

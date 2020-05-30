@@ -35,7 +35,8 @@ function AddTask() {
             {
               title: formObject.title,
               description: formObject.description,
-              due_date: formDate
+              due_date: formDate,
+              project: id
             }, token).then(res => {
             alert('Task Submitted!');
             //reset the state for the forms after data is passed

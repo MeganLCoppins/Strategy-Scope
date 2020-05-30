@@ -57,6 +57,7 @@ export default {
   },
 
   createTask: function (taskData, token) {
+    console.log(taskData)
     return axios.post("/api/tasks", taskData, {
       headers: { 
         authorization: `Bearer ${token}`
