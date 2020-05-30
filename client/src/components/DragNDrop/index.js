@@ -32,19 +32,19 @@ function DragNDrop() {
     const token = await getTokenSilently();
     API.getTasks(token)
       .then((res) => {
-        setTasks(res.data);
+        setTasks(res.data.filter((data)=> data.project === id));
         setColumns({
           ["to-do"]: {
             ...columns["to-do"],
-            tasks: res.data.filter((task) => task.status === "to-do"),
+            tasks: res.data.filter((tasks) => tasks.status === "to-do" && tasks.project === id),
           },
           ["in-progress"]: {
             ...columns["in-progress"],
-            tasks: res.data.filter((task) => task.status === "in-progress"),
+            tasks: res.data.filter((tasks) => tasks.status === "in-progress" && tasks.project === id),
           },
           ["done"]: {
             ...columns["done"],
-            tasks: res.data.filter((task) => task.status === "done"),
+            tasks: res.data.filter((tasks) => tasks.status === "done" && tasks.project),
           },
         });
       })
@@ -169,7 +169,7 @@ function DragNDrop() {
                           // console.log(task);
                           return (
                             <Draggable
-                              key={task._id}
+                              key={task.title}
                               draggableId={task._id}
                               index={index}
                             >
