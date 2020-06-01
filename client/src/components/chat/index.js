@@ -69,7 +69,7 @@ class Chat extends React.Component {
         </div>
         <div id="grid-container2">
           <ul id="messages">
-            {this.state.messages.map((message) => {
+            {this.state.messages.slice(0).reverse().map((message) => {
               return (
                 <li key={message.body} id="chats">
                   <div id="userInfo">
