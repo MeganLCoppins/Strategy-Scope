@@ -32,10 +32,8 @@ function DueDate() {
 // }
 async function loadTasks() {
   const token = await getTokenSilently();
-  console.log(id);
   API.getTasks(token)
     .then(res => {
-      console.log(res.data)
       setTasks(res.data.filter((data)=> data.project === id));
   })
     .catch((err) => console.log(err));

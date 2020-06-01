@@ -44,7 +44,7 @@ function DragNDrop() {
           },
           ["done"]: {
             ...columns["done"],
-            tasks: res.data.filter((tasks) => tasks.status === "done" && tasks.project),
+            tasks: res.data.filter((tasks) => tasks.status === "done" && tasks.project && tasks.project === id),
           },
         });
       })
@@ -95,7 +95,9 @@ function DragNDrop() {
       destItems.splice(destination.index, 0, removed);
       API.updateTask(selectedTask, destination.droppableId, token).then(
         (res) => {
-          setTasks(res.data);
+          // console.log(res.data);
+          // setTasks(res.data.filter((data)=> data.project === id));
+          // setTasks(res.data);
           setColumns({
             ...columns,
             [source.droppableId]: {
@@ -140,7 +142,7 @@ function DragNDrop() {
       >
         {Object.entries(columns).map(([id, column]) => {
           return (
-            <div
+            <div key={id}
               style={{
                 key: "index",
                 flexDirection: "column",

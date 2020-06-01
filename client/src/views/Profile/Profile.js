@@ -5,12 +5,14 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown";
 import { useAuth0 } from "../../utils/auth0Provider";
 import API from "../../utils/API";
 
 function Profile() {
   const { loading, user, getTokenSilently } = useAuth0();
-  const [projects, setProjects] =  useState([]);
+  const [projects, setProjects] = useState([]);
+  const [newProj, setNewProj] = useState({});
   const [formObject, setFormObject] = useState({});
 
   useEffect(() => {
@@ -30,80 +32,72 @@ function Profile() {
       .catch((err) => console.log(err));
   }
 
-  const renderInfo = () => {
-    if (projects.length !== 0) {
-      return projects.map((project) => (
-        <li key={project._id}>
-          <div>
-            <Link to={"/projects/" + project._id}>
-            <h4>{project.title}</h4>
-            </Link>
-          </div>
-        </li>
-      ));
-    } else {
-      return <h1>No Projects to Display</h1>;
-    }
-  };
-
   //   update component state when user types in input field
-  function handleInputChange(e){
-    const { name, value } =
-    e.target;
-    setFormObject({...formObject, [name]: value})
-};
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    setFormObject({ ...formObject, [name]: value });
+  }
 
-// when form is submitted use API.createProject method to save task data
-async function handleFormSubmit(e){
+  // when form is submitted use API.createProject method to save task data
+  async function handleFormSubmit(e) {
     e.preventDefault();
     if (formObject.title) {
       const token = await getTokenSilently();
-        API.createProject( {
-          title: formObject.title
-        }
-        , token)
-        .then( res => goToProject())
-        .catch(err => console.log(err));
-      }
+      API.createProject(
+        {
+          title: formObject.title,
+        },
+        token
+      )
+        .then((res) => loadProjects())
+        .catch((err) => console.log(err));
     }
-  function goToProject() {
-
   }
+
+
   return (
     <Fragment>
-      <div className="profile">
-        <div id="projects">
-          {/* <img src={user.picture} alt="Profile" /> */}
+      <div className="container profile">
           <h1>Hello {user.name}</h1>
-          <div>
+        <div className="row" >
+          {/* <img src={user.picture} alt="Profile" /> */}
+          <div className="col-md-6 createProj">
             <h3>Create New Project</h3>
-            <Form >
+            <Form>
               <Form.Group as={Row} controlId="createProject">
                 <Col sm={10}>
-                  <Form.Control 
-                  name="title" 
-                  value={formObject.title}
-                  placeholder="Enter The Project Name" 
-                  onChange={handleInputChange}/>
-                  <Button type="submit" onClick={handleFormSubmit}>Create Project</Button>
-                </Col>
-              </Form.Group>
-            </Form>
-            </div>
-            <div>
-              <h3>Work on Existing Project</h3>
-            <Form >
-              <Form.Group as={Row} controlId="projectName">
-                <Col sm={10}>
-                  <Form.Control type="email" placeholder="Enter Your Project Name" />
-                  <Button type="submit">Submit</Button>
+                  <Form.Control
+                    style={{marginLeft:"3%"}}
+                    name="title"
+                    value={formObject.title}
+                    placeholder="Enter The Project Name"
+                    onChange={handleInputChange}
+                  />
+                  <Button type="submit" onClick={handleFormSubmit}>
+                    Create Project
+                  </Button>
                 </Col>
               </Form.Group>
             </Form>
           </div>
-          <ul>
+          <div className="col-md-6 findProj">
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic"
+            style={{width: "100%"}}>
+              Find Your Project
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+             {projects.map((project)=> (
+              <Dropdown.Item key={project.title}href={"/projects/" + project._id}>{project.title}</Dropdown.Item>
+             ))}
+            </Dropdown.Menu>
+          </Dropdown>
+          {/* <ul>
             {renderInfo()}
-          </ul>
+
+          </ul> */}
+          </div>
         </div>
       </div>
 
@@ -112,6 +106,6 @@ async function handleFormSubmit(e){
       {/* <code>{JSON.stringify(user, null, 2)}</code> */}
     </Fragment>
   );
-};
+}
 
 export default Profile;
