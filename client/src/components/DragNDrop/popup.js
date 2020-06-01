@@ -1,6 +1,6 @@
-import Popup from "../../components/popup/index";
+import Popup from "../popup/index";
 import React, { Component } from "react";
-import logo from "../../components/images/logo7.png";
+import logo from "../images/logo7.png";
 
 class PopButt extends Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { useAuth0 } from "../../utils/auth0Provider";
 import { Link } from "react-router-dom";
-import PopButt from "./popup"
+// import PopButt from "./popup"
 // import PopButt2 from "./popup2";
 
 // import Profile from "../src/views/Profile/Profile";
@@ -27,13 +27,10 @@ function Navbar() {
             )}{" "}
           </li>
 
-          <li id="popButt">
+          {/* <li id="popButt">
             <PopButt />
-          </li>
+          </li> */}
 
-            {/* <li id="popButt2">
-              <PopButt2 />
-            </li> */}
             <li >
               <Link to={"/profile"}><button className="chatButt">Profile</button></Link>
             </li>

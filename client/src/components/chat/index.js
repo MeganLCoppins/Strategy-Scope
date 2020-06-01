@@ -36,7 +36,6 @@ class Chat extends React.Component {
   }
 
   sendMessage(event) {
-    // let input = this.state.value;
     event.preventDefault();
     const body = event.target.value;
     if (event.keyCode === 13 && body) {
@@ -48,9 +47,6 @@ class Chat extends React.Component {
         messages: [message, ...this.state.messages],
       });
       this.socket.emit("message", message);
-      // this.socket.emit('name', user)
-      // const chatVal = "Type Your Message Here"
-      // this.setState({ value: chatVal });
     }
   }
 
@@ -64,7 +60,6 @@ class Chat extends React.Component {
             value={this.state.value}
             placeholder="Type your message here"
             onKeyUp={this.sendMessage}
-            // value={this.value}
           />
         </div>
         <div id="grid-container2">

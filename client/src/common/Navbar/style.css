@@ -1,3 +1,15 @@
+nav {
+  text-align: center;
+  margin-bottom: 0;
+  background: rgb(2, 0, 36, 0.5);
+  background: linear-gradient(
+    90deg,
+    rgb(117, 116, 121) 0%,
+    rgba(28, 28, 171, 1) 35%,
+    rgba(146, 237, 255, 1) 100%
+  );
+  font-family: "Roboto", sans-serif;
+}
 nav.navbar.navbar-default {
   margin-bottom: 2vw;
   font-family: "Roboto", sans-serif;
@@ -7,8 +19,16 @@ nav.navbar.navbar-default {
 }
 .navbar-nav {
   flex-direction: row;
+  font-family: "Roboto", sans-serif;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+    /* -webkit-box-shadow: 0px 2px 9px 5px rgba(41, 41, 40, 1);
+  -moz-box-shadow: 0px 2px 9px 5px rgba(41, 41, 40, 1);
+  box-shadow: 0px 2px 9px 5px rgba(41, 41, 40, 1); */
+  /* padding: 1vh; */
 }
-
+/* sign out button */
 #signOut {
   font-family: "Roboto", sans-serif;
 
@@ -24,7 +44,6 @@ nav.navbar.navbar-default {
   z-index: 0;
   border-radius: 10px;
 }
-
 #signOut:before {
   content: "";
   background: linear-gradient(
@@ -52,19 +71,23 @@ nav.navbar.navbar-default {
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
-
 #signOut:active {
   color: #000;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(28, 28, 171, 1) 35%,
+    rgba(146, 237, 255, 1) 100%
+  );
+  transform: translateY(4px);
 }
-
 #signOut:active:after {
   background: transparent;
 }
-
 #signOut:hover:before {
   opacity: 1;
 }
-
 #signOut:after {
   z-index: -1;
   content: "";
@@ -76,7 +99,6 @@ nav.navbar.navbar-default {
   top: 0;
   border-radius: 10px;
 }
-
 @keyframes glowing {
   0% {
     background-position: 0 0;
@@ -88,14 +110,15 @@ nav.navbar.navbar-default {
     background-position: 0 0;
   }
 }
-
+/* chat button styling */
 .chatButt {
   font-family: "Roboto", sans-serif;
   margin-left:calc(1vh + 0vh);
   font-size: calc(1.1vh + 0.5vmin);
   width: 10vh;
   height: 5vh;
-  border: none;
+  border: none!important;
+  outline: none!important;
   outline: none;
   color: #fff;
   background: #111;
@@ -104,7 +127,6 @@ nav.navbar.navbar-default {
   z-index: 0;
   border-radius: 10px;
 }
-
 .chatButt:before {
   content: "";
   background: linear-gradient(
@@ -132,19 +154,15 @@ nav.navbar.navbar-default {
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
-
 .chatButt:active {
   color: #000;
 }
-
 .chatButt:active:after {
   background: transparent;
 }
-
 .chatButt:hover:before {
   opacity: 1;
 }
-
 .chatButt:after {
   z-index: -1;
   content: "";
@@ -156,7 +174,6 @@ nav.navbar.navbar-default {
   top: 0;
   border-radius: 10px;
 }
-
 @keyframes glowing {
   0% {
     background-position: 0 0;
@@ -168,44 +185,7 @@ nav.navbar.navbar-default {
     background-position: 0;
   }
 }
-
-#signOut:active {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(28, 28, 171, 1) 35%,
-    rgba(146, 237, 255, 1) 100%
-  );
-
-  transform: translateY(4px);
-}
-
-nav {
-  text-align: center;
-  margin-bottom: 0;
-  background: rgb(2, 0, 36, 0.5);
-  background: linear-gradient(
-    90deg,
-    rgb(117, 116, 121) 0%,
-    rgba(28, 28, 171, 1) 35%,
-    rgba(146, 237, 255, 1) 100%
-  );
-  font-family: "Roboto", sans-serif;
-}
-
-.navbar-nav {
-  -webkit-box-shadow: 0px 2px 9px 5px rgba(41, 41, 40, 1);
-  -moz-box-shadow: 0px 2px 9px 5px rgba(41, 41, 40, 1);
-  box-shadow: 0px 2px 9px 5px rgba(41, 41, 40, 1);
-  font-family: "Roboto", sans-serif;
-  list-style-type: none;
-  margin: 0;
-  padding: 1vh;
-  overflow: hidden;
-}
-
-
+/* task button */
 #taskAddButt {
   font-family: "Roboto", sans-serif;
   margin-left:calc(1vh + 0vh);

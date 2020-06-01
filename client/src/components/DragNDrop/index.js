@@ -11,7 +11,9 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import API from "../../utils/API";
 import { useAuth0 } from "../../utils/auth0Provider";
 import DueDate from "../../common/DueDate/index";
+import PopButt from "./popup";
 import "./style.css";
+import "../../common/Navbar/style.css";
 // import uuid from "uuid/v4";
 // const { v4: uuidv4 } = require("uuid");
 // uuidv4();
@@ -135,6 +137,9 @@ function DragNDrop() {
   return (
     <div id="kanban">
       <Link to={"/tasks/projects/" + id }><button className="chatButt">Add Task</button></Link>
+      <div id="popButt">
+            <PopButt />
+      </div>
     <DueDate />
     <div id="dragNDrop" style={{ display: "flex", justifyContent: "center", height: "100%", marginLeft: "5%", marginRight: "5%", padding: "5%"}}>
       <DragDropContext
