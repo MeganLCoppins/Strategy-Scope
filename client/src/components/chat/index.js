@@ -63,6 +63,7 @@ class Chat extends React.Component {
           />
         </div>
         <div id="grid-container2">
+          <h2 style={{fontFamily: "'PT Sans Narrow', sans-serif", fontWeight: "bold"}}>Chat Box</h2>
           <ul id="messages">
             {this.state.messages.slice(0).reverse().map((message) => {
               return (

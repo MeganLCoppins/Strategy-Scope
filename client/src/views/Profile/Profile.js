@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./style.css";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -12,12 +11,11 @@ import API from "../../utils/API";
 function Profile() {
   const { loading, user, getTokenSilently } = useAuth0();
   const [projects, setProjects] = useState([]);
-  const [newProj, setNewProj] = useState({});
   const [formObject, setFormObject] = useState({});
 
   useEffect(() => {
     loadProjects();
-  }, []);
+  });
 
   if (loading || !user) {
     return <div>Loading...</div>;

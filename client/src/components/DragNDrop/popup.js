@@ -18,10 +18,10 @@ class PopButt extends Component {
     return (
       <div>
         <button
-          className="chatButt"
           onClick={this.togglePopup.bind(this)}
           src={logo}
           alt="chat"
+          className="chatButt"
         >
           Chat
         </button>

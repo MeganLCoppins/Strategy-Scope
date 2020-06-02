@@ -12,12 +12,11 @@ uuidv4();
 function DueDate() {
   const { getTokenSilently } = useAuth0();
   const [tasks, setTasks] = useState([]);
-  const [project, setProject] = useState([]);
   const {id} = useParams();
  
   useEffect(() => {
     loadTasks();
-  }, []);
+  });
 
 //  let newTask = [];
 //   async function loadTasks() {

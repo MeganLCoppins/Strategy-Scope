@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { Router, Switch } from "react-router-dom";
 import history from "./utils/history";
 import { useAuth0 } from "./utils/auth0Provider";
 import PrivateRoute from "../src/components/PrivateRoute";
@@ -30,7 +30,6 @@ function App() {
 
   return (
     <Router history={history}>
-      {/* <DueDate /> */}
       <Navbar />
       <Switch>
         <PrivateRoute exact path="/" component={Home} />

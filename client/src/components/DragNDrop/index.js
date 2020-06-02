@@ -28,7 +28,7 @@ function DragNDrop() {
   // const [formObject, setFormObject] = useState({})
   useEffect(() => {
     loadTasks();
-  }, []);
+  });
 
   async function loadTasks() {
     const token = await getTokenSilently();
@@ -136,12 +136,20 @@ function DragNDrop() {
 
   return (
     <div id="kanban">
-      <Link to={"/tasks/projects/" + id }><button className="chatButt">Add Task</button></Link>
-      <div id="popButt">
-            <PopButt />
+      <div className="row" style={{marginBottom: "1%"}}>
+      <div id="taskBtn">
+        <Link to={"/tasks/projects/" + id }><button className="chatButt">Add Task</button></Link>
       </div>
+      <div id="chatBtn">
+        <PopButt />
+    </div>
+   
+      <Link to={"/profile"}><button className="chatButt">Profile</button></Link>
+    </div>
     <DueDate />
-    <div id="dragNDrop" style={{ display: "flex", justifyContent: "center", height: "100%", marginLeft: "5%", marginRight: "5%", padding: "5%"}}>
+    
+    <div id="dragNDrop" style={{ display: "flex", justifyContent: "center", height: "100%", marginLeft: "4.5%"}}>
+
       <DragDropContext
         onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
       >
@@ -152,10 +160,13 @@ function DragNDrop() {
                 key: "index",
                 flexDirection: "column",
                 justifyContent: "center",
-                marginRight: "3%"
+                marginRight: "6%",
+                // background: "lightgray"
+                background: "lightsteelblue"
+                // border: "2px solid black"
               }}
             >
-              <h2 style={{textAlign: "center"}}>{column.name}</h2>
+              <h2 style={{textAlign: "center", padding: "3%", background: "midnightblue", color:"gainsboro", fontFamily: "'PT Sans Narrow', sans-serif", fontSize: "40px"}}>{column.name}</h2>
               <div style={{ margin: 8 }}>
                 <Droppable droppableId={id} key={id}>
                   {(provided, snapshot) => {
@@ -165,7 +176,7 @@ function DragNDrop() {
                         ref={provided.innerRef}
                         style={{
                           background: snapshot.isDraggingOver
-                            ? "skyblue"
+                            ? "gainsboro"
                             : "none",
                           padding: 10,
                           width: 350,

@@ -1,17 +1,25 @@
 nav {
   text-align: center;
   margin-bottom: 0;
+  /* background: #5e5d63; */
   background: rgb(2, 0, 36, 0.5);
   background: linear-gradient(
     90deg,
-    rgb(117, 116, 121) 0%,
+    rgb(35, 34, 36) 0%,
     rgba(28, 28, 171, 1) 35%,
     rgba(146, 237, 255, 1) 100%
   );
   font-family: "Roboto", sans-serif;
 }
+nav h1 {
+  /* color: rgb(184, 193, 224); */
+  color: rgb(216, 222, 235);
+  /* color: black; */
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
 nav.navbar.navbar-default {
-  margin-bottom: 2vw;
+  /* margin-bottom: 2vw; */
   font-family: "Roboto", sans-serif;
 }
 #navDisplay {

@@ -20,7 +20,8 @@ h2 {
   margin-right: 5%;
   padding: 2%;
   width: fit-content;
-  background: rgba(0, 12, 78, 0.878);
+  background: rgb(1, 1, 102);
+  /* background: rgba(0, 12, 78, 0.878); */
   /* background: rgba(255, 255, 255, 0.556); */
   /* background-color: rgb(149, 3, 216); */
   /* background-color: #21D4FD;
@@ -84,4 +85,9 @@ background-image: linear-gradient(45deg, #21D4FD 12%, #B721FF 88%); */
     padding: calc(.0vh + 0.5vmin);
 
 }
-
+@media screen and (max-width: 736px){
+  #duedate {
+    margin-top: 10%;
+    margin-left: 4%;
+  }
+}
