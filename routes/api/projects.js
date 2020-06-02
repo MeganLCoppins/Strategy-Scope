@@ -8,11 +8,6 @@ router
 .get(authRoute, projectController.findAll)
 .post(authRoute, projectController.create)
 
-// matches with /api/projects/add
-// router
-//   .route("/")
-//   .post(authRoute, projectController.create);
-
 // Matches with "/api/projects/:id"
 router
   .route("/:id")

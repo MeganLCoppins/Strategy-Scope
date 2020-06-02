@@ -1,31 +1,24 @@
 const db = require("../models");
 
-// defining methods for the taskController
+// defining methods for the chatController
 module.exports = {
     // findAll set to sort based on due date in ascending order
     findAll: function(req, res){
-        db.Project
+        db.Chat
             .find(req.query)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-
     },
     findById: function(req, res){
-        db.Project
-            .find({})
-            .populate("tasks")
+        db.Chat
+            .find(req.params.id)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     create: function(req, res){
-        db.Project
+        db.Chat
             .create(req.body)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-    },
-    update: function(req, res){
-        db.Project
-            .findByIdAndUpdate(req.params.id, { tasks: req.body })
+            .then(({ _id }) => db.Project.findOneAndUpdate({}, { $push: { chat: _id } }, { new: true }))
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }

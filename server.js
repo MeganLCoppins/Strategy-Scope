@@ -5,6 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const http = require("http").createServer(app);
+// const server = app.listen(PORT)
 const io = require("socket.io")(http);
 
 // Define middleware here

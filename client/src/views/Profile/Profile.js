@@ -14,11 +14,15 @@ function Profile() {
   const [formObject, setFormObject] = useState({});
 
   useEffect(() => {
-    loadProjects();
-  });
+    componentDidMount();
+  }, []);
 
   if (loading || !user) {
     return <div>Loading...</div>;
+  }
+
+  function componentDidMount(){
+    loadProjects()
   }
 
   async function loadProjects() {

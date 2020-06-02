@@ -12,6 +12,12 @@ const ProjectSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Task"
     }
+  ],
+  chat: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Chat"
+    }
   ]
 });
 

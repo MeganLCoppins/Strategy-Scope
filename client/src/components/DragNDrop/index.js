@@ -27,8 +27,12 @@ function DragNDrop() {
   const {id} = useParams();
   // const [formObject, setFormObject] = useState({})
   useEffect(() => {
+    componentDidMount();
+  }, []);
+
+  function componentDidMount(){
     loadTasks();
-  });
+  }
 
   async function loadTasks() {
     const token = await getTokenSilently();

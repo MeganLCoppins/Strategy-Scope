@@ -15,10 +15,9 @@ export default {
       },
     });
   },
-  updateProject: function (id, newTask, token) {
-    console.log( newTask );
+  updateProject: function (chatData, id, token) {
     return axios.put(
-      "/api/projects/" + id, newTask,
+      "/api/projects/" + id, chatData,
       {
         headers: {
           authorization: `Bearer ${token}`,
@@ -57,7 +56,6 @@ export default {
   },
 
   createTask: function (taskData, token) {
-    console.log(taskData)
     return axios.post("/api/tasks", taskData, {
       headers: { 
         authorization: `Bearer ${token}`
@@ -75,6 +73,20 @@ export default {
         },
       }
     );
+  },
+  getChat: function (token) {
+    return axios.get("/api/chat", {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+    });
+  },
+  createChat: function (chatData, token) {
+    return axios.post("/api/chat", chatData, {
+      headers: { 
+        authorization: `Bearer ${token}`
+      }
+    });
   },
 
   getDeadlines: function () {
