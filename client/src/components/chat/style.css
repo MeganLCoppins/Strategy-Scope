@@ -23,6 +23,8 @@ input { grid-area: i; }
   /* background-color: #2196F3; */
   /* padding: 10px; */
   padding: 0;
+  /* overflow: scroll; */
+  /* height: 3000px; */
 }
 
 #chat {
@@ -34,7 +36,7 @@ input { grid-area: i; }
   grid-row: 3;
   height: 89%;
   width: 35%;
-  overflow: auto;
+  /* overflow: auto; */
   /* padding-right: 20px; */
     position: fixed;
     right: 0;
@@ -114,9 +116,13 @@ input { grid-area: i; }
     font-size: 2vh;
     text-align: center;
     position: relative;
+    overflow: scroll;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    height: 500px;
   }
 
- #chats {
+ .chats {
    text-align: left;
    z-index: 0;
   font-family: 'Roboto', sans-serif;
@@ -145,9 +151,13 @@ input { grid-area: i; }
     box-shadow: 0px 2px 5px 5px rgba(35,41,40,1);
   }
 
-  #userInfo{
+  .userInfo{
     position: relative;
 /* float: right; */
+  }
+  #name {
+      padding-bottom: -4vh;
+      color: burlywood;
   }
   @media screen and (max-width: 736px){
     #chat {

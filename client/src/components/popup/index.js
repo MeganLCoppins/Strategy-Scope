@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';  
 import Chat from '../chat';
 
-
 class Popup extends React.Component {  
   render() {  
 return (  
