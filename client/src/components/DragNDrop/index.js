@@ -20,7 +20,7 @@ function DragNDrop() {
 
   async function componentDidMount() {
     const token = await getTokenSilently();
-    API.getProject(id, token).then((res) => {
+    API.getProjects(token).then((res) => {
       console.log(res);
       console.log(res.data);
       setProjects(res.data.filter((data) => data._id === id));

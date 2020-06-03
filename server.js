@@ -20,20 +20,20 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/strategyscope",
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   }
-// );
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://user:password1@ds261917.mlab.com:61917/heroku_mq9x8c62",
+  process.env.MONGODB_URI || "mongodb://localhost/strategyscope",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
 );
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://user:password1@ds261917.mlab.com:61917/heroku_mq9x8c62",
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   }
+// );
 
 io.on("connection", (socket) => {
   socket.on("message", (message) => {
