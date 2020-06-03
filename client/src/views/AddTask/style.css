@@ -1,5 +1,7 @@
 h1{
     text-align: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: bold;
 }
 input {
     margin: 0;
@@ -12,6 +14,8 @@ input {
 h3{
     text-align: center;
     color: midnightblue;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: bold;
 }
 .form-control{
     font-weight: bold;
@@ -38,6 +42,11 @@ h3{
     background: lightsteelblue;
     border-color: lightsteelblue;
     color: black;
+}
+.buttons button:active {
+    background: lightsteelblue!important;
+    border-color: lightsteelblue!important;
+    color: black!important;
 }
 #popAdd{
     background: rgba(41, 41, 40, .95);

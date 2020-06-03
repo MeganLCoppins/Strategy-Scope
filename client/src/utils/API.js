@@ -42,11 +42,9 @@ export default {
       },
     });
   },
-
   getTask: function (id) {
     return axios.get("/api/tasks/" + id);
   },
-
   deleteTasks: function (id, token) {
     return axios.delete("/api/tasks/" + id, token,{
       headers: {
@@ -54,7 +52,6 @@ export default {
       }
     });
   },
-
   createTask: function (taskData, token) {
     return axios.post("/api/tasks", taskData, {
       headers: { 
@@ -62,7 +59,6 @@ export default {
       }
     });
   },
-
   updateTask: function (id, status, token) {
     return axios.put(
       "/api/tasks/" + id,
@@ -87,17 +83,5 @@ export default {
         authorization: `Bearer ${token}`
       }
     });
-  },
-
-  getDeadlines: function () {
-    return axios.get("/api/deadline");
-  },
-
-  updateDeadlines: function (id) {
-    return axios.put("/api/deadline/" + id);
-  },
-
-  deleteDeadline: function (id) {
-    return axios.delete("/api/deadline/" + id);
   },
 };

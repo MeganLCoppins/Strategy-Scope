@@ -13,10 +13,12 @@ function AddTask() {
   //   components initial state
   const [formObject, setFormObject] = useState({});
   const [formDate, setDate] = useState(new Date());
+  const [taskAdded, setTaskAdded] = useState("");
   const { id } = useParams();
 
   //   update component state when user types in input field
   function handleInputChange(e) {
+    setTaskAdded("");
     const { name, value } = e.target;
     setFormObject({ ...formObject, [name]: value });
   }
@@ -40,7 +42,7 @@ function AddTask() {
         token
       )
         .then((res) => {
-          alert("Task Submitted!");
+          setTaskAdded("Your task has been added!");
           //reset the state for the forms after data is passed
           setFormObject({ title: "", description: "" });
         })
@@ -52,9 +54,6 @@ function AddTask() {
     <div id="taskCont">
       <Link to={"/projects/" + id}>
         <button className="chatButt">Go Back</button>
-      </Link>
-      <Link to={"/profile"}>
-        <button className="chatButt">Profile</button>
       </Link>
       <div className="row">
         <div className="col">
@@ -83,6 +82,7 @@ function AddTask() {
               <div className="calendar offset-3">
                 <Calendar onChange={handleDateChange} value={formDate} />
               </div>
+              <h3>{taskAdded}</h3>
               <div className="offset-5 buttons">
                 <FormBtn
                   disabled={!(formObject.title && formObject.description)}

@@ -18,7 +18,6 @@ ReactDOM.render(
   <Auth0Provider
     client_id={config.clientId}
     domain={config.domain}
-    // redirect_uri = "https://strategyscope.herokuapp.com/callback"
     redirect_uri={window.location.origin}
     audience={config.audience} // NEW - specify the audience value
     onRedirectCallback={onRedirectCallback}
