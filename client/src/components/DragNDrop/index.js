@@ -24,8 +24,9 @@ function DragNDrop() {
       console.log(res);
       console.log(res.data);
       setProjects(res.data.filter((data) => data._id === id));
-    });
-    loadTasks();
+    })
+      .then(res => loadTasks())
+      .catch(err => console.log(err));
   }
 
   async function loadTasks() {
@@ -148,7 +149,7 @@ function DragNDrop() {
         </Link>
       </div>
       {projects.map((project) => (
-        <h5 style={{ textAlign: "left", color: "midnightblue" }}>
+        <h5 key={project.code} style={{ textAlign: "left", color: "midnightblue" }}>
           <strong>Project Code: </strong>{project.code}
         </h5>
       ))}

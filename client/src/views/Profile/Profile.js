@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./style.css";
 import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useAuth0 } from "../../utils/auth0Provider";
 import API from "../../utils/API";
