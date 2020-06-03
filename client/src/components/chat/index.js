@@ -1,6 +1,6 @@
 import "./style.css";
-// import io from "socket.io-client";
-import openSocket from "socket.io-client";
+import io from "socket.io-client";
+// import openSocket from "socket.io-client";
 import { useAuth0 } from "../../utils/auth0Provider";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -10,7 +10,8 @@ import Name from "../../components/Name/";
 import uuid from "uuid/v4";
 const { v4: uuidv4 } = require("uuid");
 uuidv4();
-const socket = openSocket("http://localhost:3001");
+// const socket = openSocket("http://localhost:3001");
+const socket = io("http://localhost:3001");
 
 function Chat() {
   const { getTokenSilently } = useAuth0();
@@ -35,7 +36,7 @@ function Chat() {
 
   async function componentDidMount() {
     getChats();
-    // socket = io("http://localhost:3001");
+
     // const token = await getTokenSilently();
     // API.getChat(token)
     //     .then(res => {setDbMessages(res.data.filter((data)=> data.project === id))})
@@ -54,9 +55,9 @@ function Chat() {
       })
       .catch((err) => console.log(err));
 
-    socket.on("message", (message) => {
-      setMessages([message]);
-    });
+    // socket.on("message", (message) => {
+    //   setMessages([message]);
+    // });
   }
 
   async function sendMessage(e) {

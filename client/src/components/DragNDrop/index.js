@@ -21,8 +21,6 @@ function DragNDrop() {
   async function componentDidMount() {
     const token = await getTokenSilently();
     API.getProjects(token).then((res) => {
-      console.log(res);
-      console.log(res.data);
       setProjects(res.data.filter((data) => data._id === id));
     })
       .then(res => loadTasks())
@@ -149,9 +147,12 @@ function DragNDrop() {
         </Link>
       </div>
       {projects.map((project) => (
-        <h5 key={project.code} style={{ textAlign: "left", color: "midnightblue" }}>
+        <div key={project.code} style={{textAlign: "center"}}>
+          <h2 style={{ textAlign: "left", color: "midnightblue",textAlign: "center" }}><strong>{project.title}</strong></h2>
+          <h3  style={{ textAlign: "left", color: "midnightblue",textAlign: "center" }}>
           <strong>Project Code: </strong>{project.code}
-        </h5>
+          </h3>
+        </div>
       ))}
       <DueDate />
       <div
