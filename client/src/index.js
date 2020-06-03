@@ -5,7 +5,6 @@ import App from "./App";
 import { Auth0Provider } from "./utils/auth0Provider";
 import config from "./auth_config.json";
 import history from "./utils/history";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 const onRedirectCallback = (appState) => {
   history.push(
@@ -19,8 +18,8 @@ ReactDOM.render(
   <Auth0Provider
     client_id={config.clientId}
     domain={config.domain}
-    redirect_uri = "https://strategyscope.herokuapp.com/callback"
-    // redirect_uri={window.location.origin}
+    // redirect_uri = "https://strategyscope.herokuapp.com/callback"
+    redirect_uri={window.location.origin}
     audience={config.audience} // NEW - specify the audience value
     onRedirectCallback={onRedirectCallback}
   >

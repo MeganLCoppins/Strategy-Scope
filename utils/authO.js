@@ -3,7 +3,7 @@ const jwksRsa = require("jwks-rsa");
 
 // Set up Auth0 configuration
 const authConfig = {
-  domain: "snowy-mode-2440.auth0.com",
+  domain: "dev-wnzvobdc.auth0.com",
   audience: "https://strategyscope.herokuapp.com/",
 };
 
