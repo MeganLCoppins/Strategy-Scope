@@ -7,6 +7,11 @@ const ProjectSchema = new Schema({
     type: String,
     unique: true
   },
+  code: {
+    type: String,
+    trim: true,
+    validate: [({ length }) => length >= 6, "Password should be longer."]
+  },
   tasks: [
     {
       type: Schema.Types.ObjectId,

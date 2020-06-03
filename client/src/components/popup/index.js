@@ -10,7 +10,7 @@ return (
 <div className='popup\_inner'>  
 
 
-{/* <button id='close' onClick={this.props.closePopup}>close me</button>  */}
+<button id='close' onClick={this.props.closePopup}>Close</button> 
 
 </div>  
 </div>  

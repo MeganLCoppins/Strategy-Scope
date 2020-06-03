@@ -18,22 +18,21 @@
     margin: auto;  
     border-radius: 20px;  
     background: white;  
-  }
+  } */
 
   #close {
-     padding: 15px 25px;
+  position: fixed;
+  top: 13%;
+  right: 1%!important;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #fff;
-  background-color: #4CAF50;
+  color: midnightblue;
+  background-color: transparent;
   border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-    right: -3vh;
-      position: relative;
+  border-radius: 10%;
   }
 
 
-   */
+  

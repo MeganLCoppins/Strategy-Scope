@@ -1,6 +1,7 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
+import Moment from "react-moment";
 import { useParams } from "react-router-dom";
 import { useAuth0 } from "../../utils/auth0Provider";
 const { v4: uuidv4 } = require("uuid");
@@ -46,7 +47,7 @@ async function loadTasks() {
             <h4>{task.title}</h4>
           </div>{" "}
           <div>Due Date: </div>
-          <div>{task.due_date.slice(2, 10)}</div>
+          <Moment format="MM/DD/YYYY">{task.due_date}</Moment>
         </li>
       ));
     } else {
