@@ -30,7 +30,6 @@ function Profile() {
 
   async function loadProjects() {
     const token = await getTokenSilently();
-    setFormObject({});
     API.getProjects(token)
       .then((res) => {
         setProjects(res.data);
@@ -43,6 +42,7 @@ function Profile() {
     const { name, value } = e.target;
     setFormObject({ ...formObject, [name]: value });
   }
+
   function handleChange(e){
     const { name, value } = e.target;
     setSearchObj({ ...searchObj, [name]: value});
@@ -60,7 +60,10 @@ function Profile() {
         },
         token
       )
-        .then((res) => loadProjects())
+        .then((res) => {
+          loadProjects()
+          setFormObject({ title: "", code: ""});
+        })
         .catch((err) => console.log(err));
     }
   }

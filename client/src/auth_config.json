@@ -1,5 +1,5 @@
 {
-  "domain": "dev-nwi6y2ua.auth0.com",
-  "clientId": "EIXNV2ZQH0pRUzJLAST1tZ3SjkLGSO7B",
-  "audience": "strategyscopeapi"
+  "domain": "dev-wnzvobdc.auth0.com",
+  "clientId": "S990ZPTFna1oG81UJISlRWAMN8ejNDbG",
+  "audience": "https://strategyscope.herokuapp.com/"
 }

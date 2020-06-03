@@ -7,8 +7,6 @@ import { useAuth0 } from "../../utils/auth0Provider";
 const { v4: uuidv4 } = require("uuid");
 uuidv4();
 
-/// using UUID, how to integrate that to backend(Mongodb). These are the projects(items) we are going to drag around.
-
 //// ajax call to retrieve data from seed (Task)
 function DueDate() {
   const { getTokenSilently } = useAuth0();
@@ -19,17 +17,6 @@ function DueDate() {
     loadTasks();
   });
 
-//  let newTask = [];
-//   async function loadTasks() {
-//     const token = await getTokenSilently();
-//     console.log(id);
-//     API.getProjects(token)
-//       .then(res => {
-//         setProject(project.project = res.data.filter((data)=> data._id === id));
-//         setTasks(project.project[0].tasks);
-//     })
-//       .catch((err) => console.log(err));
-// }
 async function loadTasks() {
   const token = await getTokenSilently();
   API.getTasks(token)
@@ -54,7 +41,6 @@ async function loadTasks() {
       return <h1>No Tasks to Display...</h1>;
     }
   };
-
   return (
       <div id="duedate">
         <ul>
