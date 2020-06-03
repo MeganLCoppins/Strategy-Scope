@@ -9,12 +9,12 @@ input {
     border: none;
     color: white;
 }
-.calendar{
-    padding-left: 35%;
- } 
+/* .calendar{
+    margin-left: 5%;
+ }  */
 h3{
-    /* text-align: center; */
-    padding-left: 38%;
+    text-align: center;
+    color: midnightblue;
 }
 .form-control{
     font-weight: bold;
@@ -22,10 +22,58 @@ h3{
     width: 60%;
     margin-left: 22%;
 }
-.buttons {
-    margin-left: 41%;
+.dueDate {
+    /* margin-left: 21%; */
+    margin-bottom: 20px;
 }
-
+.buttons button {
+    margin-left: 0%!important;
+    background: midnightblue;
+    border-color: midnightblue;
+    color: white;
+    font-weight: bold;
+}
+.buttons button:disabled{
+    background: midnightblue;
+    border-color: midnightblue;
+    color: white;
+}
+.buttons button:hover {
+    background: lightsteelblue;
+    border-color: lightsteelblue;
+    color: black;
+}
 #popAdd{
     background: rgba(41, 41, 40, .95);
+}
+#taskCont {
+    margin-top: 1%;
+    margin-left: 1%;
+}
+#formTitle {
+    background: lightsteelblue;
+}
+#formText {
+    background: lightsteelblue;
+}
+@media screen and (max-width: 1030px){
+    .dueDate {
+        margin-left: 20%!important;
+    }
+}
+@media screen and (max-width: 790px){
+    .dueDate {
+        margin-left: 10%!important;
+    }
+}
+@media screen and (max-width: 500px){
+    .dueDate{
+        margin-left: 0%!important;
+    }
+    .calendar {
+        margin-left: 0%!important;
+    }
+    .buttons {
+        margin-left: 0%!important;
+    }
 }

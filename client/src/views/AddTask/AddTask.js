@@ -64,7 +64,9 @@ function AddTask() {
     // }
 
   return (
-    <div className="container mt-4">
+    <div id="taskCont">
+      <Link to={"/projects/" + id }><button className="chatButt">Go Back</button></Link>
+      <Link to={"/profile"}><button className="chatButt">Profile</button></Link>
       <div className="row">
         <div className="col">
           <h1>Add a New Task</h1>
@@ -78,33 +80,35 @@ function AddTask() {
               name="title"
               placeholder="Task Title (required)"
               value={formObject.title}
-              idname="formText"
+              id="formTitle"
             />
             <TextArea
               onChange={handleInputChange}
               name="description"
               placeholder="Description of Task (required)"
               value={formObject.description}
-              idname="formText"
+              id="formText"
             />
-            <div className="dueDate fluid">
-              <h3>Select Due Date Below</h3>
-              <div className="calendar">
+            <div className="col-md-6 offset-3 dueDate">
+              <h3>Select Due Date </h3>
+            {/* <div className="dueDate fluid"> */}
+              <div className="calendar offset-3">
                 <Calendar
                   onChange={handleDateChange}
                   value= {formDate}
                 />
               </div>
-              <div className="buttons">
+            {/* </div> */}
+              <div className="offset-5 buttons">
                 <FormBtn
                 disabled={!(formObject.title && formObject.description)}
                 onClick={handleFormSubmit}
                 >
                  Save Task
                 </FormBtn>
-                <Link className="link" to={"/"}><FormBtn>Done</FormBtn></Link>
+                {/* <Link className="link" to={"/projects/" + id}><FormBtn>Done</FormBtn></Link> */}
               </div>
-            </div>
+              </div>
           </form>
         </div>
       </div>
