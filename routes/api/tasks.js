@@ -7,11 +7,6 @@ router.route("/")
 .get(authRoute, taskController.findAll)
 .post(authRoute, taskController.create)
 
-// matches with /api/tasks/add
-// router
-//   .route("/")
-//   .post(authRoute, taskController.create);
-
 // Matches with "/api/tasks/:id"
 router
   .route("/:id")

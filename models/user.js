@@ -3,11 +3,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema ({
-	email: {
-    type: String,
-		unique: true,
-		match: [/.+@.\..+/, "Please enter a valid email address"]
-	},
+	name: String,
+	email: String,
 	auth_id: {
 		type: String
 	},

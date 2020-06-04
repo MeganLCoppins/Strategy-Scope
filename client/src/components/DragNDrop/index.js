@@ -130,9 +130,10 @@ function DragNDrop() {
 
   const [columns, setColumns] = useState(columnsFromBackend);
 
+
   return (
     <div id="kanban">
-      <div className="row" style={{ marginBottom: "1%" }}>
+      <div className="row" style={{ marginBottom: "1%", marginRight: "0px" }}>
         <div id="taskBtn">
           <Link to={"/tasks/projects/" + id}>
             <button className="chatButt">Add Task</button>
@@ -141,7 +142,6 @@ function DragNDrop() {
         <div id="chatBtn">
           <PopButt />
         </div>
-
         <Link to={"/profile"}>
           <button className="chatButt">Profile</button>
         </Link>
