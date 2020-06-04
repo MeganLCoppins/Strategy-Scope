@@ -1,18 +1,6 @@
 # Strategy-Scope
 
-## Installation
-
-clone github repo
-
-run yarn inside terminal in repo
-
-run yarn start inside terminal
-
-## Technologies Used
-
-Auth0, Axios, Express, Mongoose, React, React Calendar, React Beautiful Drag n Drop, React Bootstrap, React Router, React Scripts, Socket IO.
-
-## Usage
+## Description
 
 This project is designed to combine a communication tool with a Kanban tool. In order to increase efficiency among teams, this project aims to reduce the need to switch between applications and allow teams to use a one stop shop for their project needs.
 
@@ -22,6 +10,26 @@ Additionally users will see a deadline bar to the right of the Kanban. This feat
 
 Finally, this project features a chat system that is specific to the project. Users can click the chat button and speak with team members without having to switch applications.
 
+## Table of Contents
+* [Usage](#Usage)
+* [Demonstration](#Demonstration)
+* [Technologies](#Technologies)
+* [Contributers](#Contributers)
+* [Deployed-Link](#Deployed-Link)
+* [Developer](#Devloper)
+
+## Usage
+
+To use the application simply head to the [deployed-link](https://strategyscope.herokuapp.com/profile)!
+
+## Demonstration
+
+
+
+## Technologies Used
+
+React, Express, Node, MongoDB, Auth0, Axios, React Calendar, React Beautiful Drag n Drop, React Bootstrap, React Router, React Scripts, and Socket IO.
+
 ## Project Images
 
 ![strategy scope sign in logo](https://live.staticflickr.com/65535/49798835757_c7a8fbee0e_b.jpg)
@@ -29,21 +37,18 @@ Finally, this project features a chat system that is specific to the project. Us
 ![strategy scope add task prompt](https://live.staticflickr.com/65535/49797976228_1b3677582b_b.jpg)
 ![strategy scope chat system](https://live.staticflickr.com/65535/49798835812_a958c4363e_b.jpg)
 
-## Project Status
+## Contributers
 
-This project achieves it's MVP, but there are many goals for this project in the future.
+Collaborator(s) - Ian Sears, Kenneth Achumahara, Justin Kellogg
 
-Features we'd like to implement:
-The ability to have multiple projects, each with their own tasks, deadline bar, and chat system.
+## Future-Development
 
-The ability to implement a video chat system, combining project management tools, chat, and video in one application.
+## Deployed-Link
 
-## Credits
+https://strategyscope.herokuapp.com/profile
 
-Collaborator(s) - Megan Coppins, Ian Sears, Kenneth Achumahara, Justin Kellogg
+## Developer
 
-## License
+Megan Coppins
 
-https://justinkellogg89.github.io/miniature-disco
-
-http://strategy-scope.herokuapp.com/
+https://github.com/MeganLCoppins/Strategy-Scope

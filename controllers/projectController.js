@@ -19,7 +19,6 @@ module.exports = {
     create: function(req, res){
         db.Project
             .create(req.body)
-            .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { project: _id } }, { new: true }))
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
