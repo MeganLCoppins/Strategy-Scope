@@ -52,7 +52,8 @@ function Profile() {
   async function handleFormSubmit(e) {
     e.preventDefault();
     let projCode = uuidv4().slice(0, 8)
-    if (formObject.title === projects.map((project)=> project.title)){
+    let projTitle = projects.filter((project)=> project.title === formObject.title)
+    if (projTitle[0]){
       setSameTitle("Sorry, that title has already been used.")
     } else if (formObject.title) {
       const token = await getTokenSilently();
@@ -94,7 +95,7 @@ function Profile() {
             <h3>Create New Project</h3>
             <h5>A unique code will be created with your project that you and your team members will need in order to gain access to your project.</h5>
             <h5>Enter a project name below!</h5>
-            <h3>{sameTitle}</h3>
+            <h3 style={{color: "red", marginBottom: "0"}}>{sameTitle}</h3>
             <Form>
               <Form.Group controlId="createProject" id="createProject">
                   <Form.Control
