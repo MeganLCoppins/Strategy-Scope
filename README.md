@@ -4,9 +4,7 @@
 
 This project is designed to combine a communication tool with a Kanban tool. In order to increase efficiency among teams, this project aims to reduce the need to switch between applications and allow teams to use a one stop shop for their project needs.
 
-Users will be prompted with a signin popup window using Auth0. Once users have successfully signed in using social media, or a local db account, they will be taken to the project splash page. Here they will see a Kanban with various tasks added by team members complete with title and description. These tasks can be moved around the columns which are labeled to-do, in progress, and done. When they are moved in the columns, the tasks are updated in the database so it persists through reloads.
-
-Additionally users will see a deadline bar to the right of the Kanban. This feature sorts all the tasks by deadline date and allows users to quickly see what needs to be completed and when that task is due.
+Users will be prompted with a signin popup window using Auth0. Once users have successfully signed in they will be taken to their profile page where they are able to either create a new project or enter an existing project's unique code to gain access to the project. On the project's page the user will see a deadline bar with existing tasks sorted by their deadline date and below this a Kanban with various tasks added by team members complete with title and description is displayed. These tasks can be moved around the columns which are labeled to-do, in progress, and done. When they are moved in the columns, the tasks are updated in the database so it persists through reloads.
 
 Finally, this project features a chat system that is specific to the project. Users can click the chat button and speak with team members without having to switch applications.
 
@@ -24,24 +22,34 @@ To use the application simply head to the [deployed-link](https://strategyscope.
 
 ## Demonstration
 
+Login Screen
+![strategy scope sign in logo](/images/signinlogo.png)
+![strategy scope login popup](/images/loginScreen.png)
 
+Profile View
+![strategy scope profile](/images/profile.png)
+
+Project View
+![strategy scope project](/images/kanbanview.png)
+
+Chat View
+![strategy scope chat](/images/chat.png)
+
+Add Task View 
+![strategy scope add task](/images/addtask1.png)
+![strategy scope add task2](/images/addtask2.png)
 
 ## Technologies Used
 
 React, Express, Node, MongoDB, Auth0, Axios, React Calendar, React Beautiful Drag n Drop, React Bootstrap, React Router, React Scripts, and Socket IO.
-
-## Project Images
-
-![strategy scope sign in logo](https://live.staticflickr.com/65535/49798835757_c7a8fbee0e_b.jpg)
-![strategy scope kanban page](https://live.staticflickr.com/65535/49797976168_b37b2d6b5b_b.jpg)
-![strategy scope add task prompt](https://live.staticflickr.com/65535/49797976228_1b3677582b_b.jpg)
-![strategy scope chat system](https://live.staticflickr.com/65535/49798835812_a958c4363e_b.jpg)
 
 ## Contributers
 
 Collaborator(s) - Ian Sears, Kenneth Achumahara, Justin Kellogg
 
 ## Future-Development
+
+In the future I plan on implementing a video chat system like Zoom as well as the ability to send files, images, and individual messages in the chat. 
 
 ## Deployed-Link
 
