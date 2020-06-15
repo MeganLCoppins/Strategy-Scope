@@ -53,7 +53,7 @@ In the future I plan on implementing a video chat system like Zoom as well as th
 
 ## Deployed-Link
 
-https://strategyscope.herokuapp.com/profile
+https://strategyscope.herokuapp.com/
 
 ## Developer
 
