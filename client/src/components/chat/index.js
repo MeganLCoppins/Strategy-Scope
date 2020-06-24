@@ -11,7 +11,7 @@ import uuid from "uuid/v4";
 const { v4: uuidv4 } = require("uuid");
 uuidv4();
 // const socket = openSocket("http://localhost:3001");
-const socket = io("http://localhost:3001");
+const socket = io("http://localhost:3001" || "https://strategyscope.herokuapp.com/");
 
 function Chat() {
   const { getTokenSilently } = useAuth0();
