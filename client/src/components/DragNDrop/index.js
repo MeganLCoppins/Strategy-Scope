@@ -20,11 +20,12 @@ function DragNDrop() {
 
   async function componentDidMount() {
     const token = await getTokenSilently();
-    API.getProjects(token).then((res) => {
-      setProjects(res.data.filter((data) => data._id === id));
-    })
-      .then(res => loadTasks())
-      .catch(err => console.log(err));
+    API.getProjects(token)
+      .then((res) => {
+        setProjects(res.data.filter((data) => data._id === id));
+      })
+      .then((res) => loadTasks())
+      .catch((err) => console.log(err));
   }
 
   async function loadTasks() {
@@ -56,13 +57,6 @@ function DragNDrop() {
       })
       .catch((err) => console.log(err));
   }
-
-  // async function deleteTask(id){
-  //   const token = await getTokenSilently();
-  //   API.deleteTasks(id, token)
-  //   .then(res => loadTasks())
-  //   .catch(err => console.log(err));
-  //   }
 
   // /// Creating Columns for tasks columns
   // // moving the tasks seed to columns
@@ -130,7 +124,6 @@ function DragNDrop() {
 
   const [columns, setColumns] = useState(columnsFromBackend);
 
-
   return (
     <div id="kanban">
       <div className="row" style={{ marginBottom: "1%", marginRight: "0px" }}>
@@ -147,10 +140,25 @@ function DragNDrop() {
         </Link>
       </div>
       {projects.map((project) => (
-        <div key={project.code} style={{textAlign: "center"}}>
-          <h2 style={{ textAlign: "left", color: "midnightblue",textAlign: "center" }}><strong>{project.title}</strong></h2>
-          <h3  style={{ textAlign: "left", color: "midnightblue",textAlign: "center" }}>
-          <strong>Project Code: </strong>{project.code}
+        <div key={project.code} style={{ textAlign: "center" }}>
+          <h2
+            style={{
+              textAlign: "left",
+              color: "midnightblue",
+              textAlign: "center",
+            }}
+          >
+            <strong>{project.title}</strong>
+          </h2>
+          <h3
+            style={{
+              textAlign: "left",
+              color: "midnightblue",
+              textAlign: "center",
+            }}
+          >
+            <strong>Project Code: </strong>
+            {project.code}
           </h3>
         </div>
       ))}

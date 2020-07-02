@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { useAuth0 } from "../../utils/auth0Provider";
-import './style.css';
-
+import "./style.css";
 
 const Name = () => {
   const { loading, user } = useAuth0();
@@ -12,7 +11,7 @@ const Name = () => {
 
   return (
     <Fragment>
-      <p id='name'>{user.name}</p>
+      <p id="name">{user.name}</p>
     </Fragment>
   );
 };

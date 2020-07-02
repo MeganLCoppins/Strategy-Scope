@@ -1,4 +1,3 @@
-import Popup from "../../components/popup/index";
 import React, { Component } from "react";
 import logo from "../../components/images/logo7.png";
 import Popup2 from '../../components/AddPop/index'

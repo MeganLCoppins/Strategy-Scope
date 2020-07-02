@@ -2,10 +2,10 @@ import axios from "axios";
 
 export default {
   getProjects: function (token) {
-    return axios.get("/api/projects",{
-    headers: {
-      authorization: `Bearer ${token}`,
-    },
+    return axios.get("/api/projects", {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     });
   },
   getProject: function (id, token) {
@@ -16,14 +16,11 @@ export default {
     });
   },
   updateProject: function (chatData, id, token) {
-    return axios.put(
-      "/api/projects/" + id, chatData,
-      {
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    return axios.put("/api/projects/" + id, chatData, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
   },
   deleteProject: function (id) {
     return axios.delete("/api/projects/" + id);
@@ -31,8 +28,8 @@ export default {
   createProject: function (projectData, token) {
     return axios.post("/api/projects", projectData, {
       headers: {
-        authorization: `Bearer ${token}`
-      }
+        authorization: `Bearer ${token}`,
+      },
     });
   },
   getTasks: function (token) {
@@ -46,17 +43,17 @@ export default {
     return axios.get("/api/tasks/" + id);
   },
   deleteTasks: function (id, token) {
-    return axios.delete("/api/tasks/" + id, token,{
+    return axios.delete("/api/tasks/" + id, token, {
       headers: {
-        authorization: `Bearer ${token}`
-      }
+        authorization: `Bearer ${token}`,
+      },
     });
   },
   createTask: function (taskData, token) {
     return axios.post("/api/tasks", taskData, {
-      headers: { 
-        authorization: `Bearer ${token}`
-      }
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     });
   },
   updateTask: function (id, status, token) {
@@ -72,16 +69,16 @@ export default {
   },
   getChat: function (token) {
     return axios.get("/api/chat", {
-    headers: {
-      authorization: `Bearer ${token}`,
-    },
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     });
   },
   createChat: function (chatData, token) {
     return axios.post("/api/chat", chatData, {
-      headers: { 
-        authorization: `Bearer ${token}`
-      }
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     });
   },
 };

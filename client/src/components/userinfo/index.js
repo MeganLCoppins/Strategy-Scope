@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { useAuth0 } from "../../utils/auth0Provider";
-import './style.css';
-
+import "./style.css";
 
 const UserInfo = () => {
   const { loading, user } = useAuth0();
@@ -13,8 +12,8 @@ const UserInfo = () => {
   return (
     <Fragment>
       <div>
-      <img id='chatPic' src={user.picture} alt="user info" />
-</div>
+        <img id="chatPic" src={user.picture} alt="user info" />
+      </div>
     </Fragment>
   );
 };

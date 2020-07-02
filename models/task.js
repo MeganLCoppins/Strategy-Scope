@@ -13,8 +13,7 @@ const TaskSchema = new Schema({
     type: String,
     default: "to-do",
   },
-  project: String
-  
+  project: String,
 });
 
 const Task = mongoose.model("Task", TaskSchema);

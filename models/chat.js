@@ -8,8 +8,8 @@ const ChatSchema = new Schema({
   project: String,
   dateCreated: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 const Chat = mongoose.model("Chat", ChatSchema);

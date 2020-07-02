@@ -1,28 +1,28 @@
-.profile h1{
-    text-align: center;
-    margin-top: 5%;
+.profile h1 {
+  text-align: center;
+  margin-top: 5%;
 }
-.profile h3{
-    margin-left: 0;
-    padding-bottom: 5%;
-    padding-left: 0;
-    text-align: center;
+.profile h3 {
+  margin-left: 0;
+  padding-bottom: 5%;
+  padding-left: 0;
+  text-align: center;
 }
 #projects {
-    border: 3px solid black;
+  border: 3px solid black;
 }
 .createProj {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 #createProject {
-    display: flex;
+  display: flex;
 }
 .findProj {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 .hide {
-    display: none;
+  display: none;
 }
 .show {
-    display: block;
+  display: block;
 }

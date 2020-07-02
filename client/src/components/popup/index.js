@@ -1,21 +1,20 @@
-import React from 'react';  
-import './style.css';  
-import Chat from '../chat';
+import React from "react";
+import "./style.css";
+import Chat from "../chat";
 
-class Popup extends React.Component {  
-  render() {  
-return (  
-<div className='popup'>  
-<Chat />
-<div className='popup\_inner'>  
-
-
-<button id='close' onClick={this.props.closePopup}>Close</button> 
-
-</div>  
-</div>  
-);  
-}  
-}  
+class Popup extends React.Component {
+  render() {
+    return (
+      <div className="popup">
+        <Chat />
+        <div className="popup\_inner">
+          <button id="close" onClick={this.props.closePopup}>
+            Close
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Popup;

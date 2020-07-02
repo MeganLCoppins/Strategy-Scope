@@ -4,11 +4,10 @@ import "./style.css";
 import logo from "../../components/images/logo6.png";
 
 const Splash = () => {
-  const { isAuthenticated, loading, loginWithRedirect,  user } = useAuth0();
+  const { isAuthenticated, loading, loginWithRedirect, user } = useAuth0();
   if (loading || !user) {
     return (
       <div id="main">
-        {/* <Link onClick={() => loginWithPopup()} to={"/login"}> */}
         <button
           onClick={() => loginWithRedirect()}
           className="glow-on-hover"
@@ -16,7 +15,6 @@ const Splash = () => {
         >
           <img id="logo" src={logo} alt="logo" />
         </button>
-        {/* </Link> */}
       </div>
     );
   }

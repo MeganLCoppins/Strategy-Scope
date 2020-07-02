@@ -12,12 +12,8 @@ import Navbar from "./common/Navbar";
 import Home from "./views/Home";
 import AddTask from "./views/AddTask/AddTask";
 import Profile from "../src/views/Profile/Profile";
-// import ViewTasks from "../src/views/ViewTasks/ViewTasks";
 import Project from "./views/ViewProject/ViewProject";
-
-
 import Splash from "./views/SplashPage/index";
-// import DueDate from "./common/DueDate/index";
 
 function App() {
   const { loading, isAuthenticated } = useAuth0();
@@ -34,8 +30,8 @@ function App() {
       <Switch>
         <PrivateRoute exact path="/" component={Home} />
         <PrivateRoute exact path="/tasks/projects/:id" component={AddTask} />
-        <PrivateRoute path="/profile" component={Profile}/>
-        <PrivateRoute path="/projects/:id" component={Project}/>
+        <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/projects/:id" component={Project} />
       </Switch>
     </Router>
   );
