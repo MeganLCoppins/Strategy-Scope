@@ -10,10 +10,12 @@ import Name from "../../components/Name/";
 import uuid from "uuid/v4";
 const { v4: uuidv4 } = require("uuid");
 uuidv4();
+const ENDPOINT = '/';
 // const socket = openSocket("http://localhost:3001");
-const socket = io("http://localhost:3001");
+// const socket = io("http://localhost:3001");
 // const socket = io("http://localhost:3001" || "https://strategyscope.herokuapp.com/");
 // const socket = io('/');
+const socket = io(ENDPOINT);
 
 function Chat() {
   const { getTokenSilently } = useAuth0();
